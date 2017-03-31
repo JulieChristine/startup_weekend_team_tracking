@@ -1,0 +1,12 @@
+<h1>Startup Weekend Team Tracker</h1>
+
+  <p>Overview teams enrolled:</p>
+
+<div class="team_display">
+  <ul>
+    <% @teams.each() do |team| %>
+      <li><%= team.name() %> <br><%= team.project %></li>
+    <% end %>
+  </ul>
+  <button type="button" name="button"><a href="/teams/new">create team</a></button>
+</div>

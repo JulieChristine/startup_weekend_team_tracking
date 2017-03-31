@@ -1,0 +1,6 @@
+<h1>Team list</h1>
+  <div class="team_tile">
+    <% @teams.each() do |team| %>
+        <a href="/teams/<%= team.id() %>"><%= team.name() %><br/><%= team.project() %></a>
+    <% end %>
+  </div>
