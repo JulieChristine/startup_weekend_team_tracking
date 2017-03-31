@@ -1,12 +1,17 @@
+<div class="Jumbotron">
+
+
 <h1>Startup Weekend Team Tracker</h1>
 
   <p>Overview teams enrolled:</p>
 
-<div class="team_display">
-  <ul>
-    <% @teams.each() do |team| %>
-      <li><%= team.name() %> <br><%= team.project %></li>
-    <% end %>
-  </ul>
-  <button type="button" name="button"><a href="/teams/new">create team</a></button>
+  <div class="team_display">
+    <ul>
+      <% @teams.each() do |team| %>
+        <li><a href="/teams/<%= team.id() %>"><%= team.name() %> <br><%= team.project() %></li>
+      <% end %>
+    </ul>
+    <button type="button" name="button"><a href="/teams/new">create team</a></button>
+    <button type="button" name="button"><a href="/teams">Go to team overview</a></button>
+  </div>
 </div>

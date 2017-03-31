@@ -1,0 +1,8 @@
+body{
+  background-image: image('/assets/people-coffee-tea-meeting.jpg');
+}
+
+
+h1, h2, h3, h4 {
+  color: blue;
+}

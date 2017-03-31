@@ -1,0 +1,11 @@
+<h3>Please fill-in the following form</h3>
+
+<form action="/members" method="post">
+  <input id='team_id' name='team_id' type='hidden' value='<%= @team.id() %>'>
+
+  <label for="first_name">First name<input id="first_name" name="first_name" type="text"></label>
+  <label for="last_name">Last name<input id="last_name" name="last_name" type="text"></label>
+  <label for="specialization">Specialization<input id="specialization" name="specialization" type="text"></label>
+
+  <button type="submit">submit member</button>
+</form>

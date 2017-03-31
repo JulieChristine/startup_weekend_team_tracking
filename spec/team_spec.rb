@@ -1,5 +1,6 @@
 require('rspec')
 require('team')
+require('member')
 
 describe(Team) do
   before() do
@@ -49,6 +50,15 @@ describe(Team) do
         test_team2 = Team.new({:name => "Blackboard", :project => "Blackboard application for Accelerate HK"})
         test_team2.save()
         expect(Team.find(test_team.id())).to(eq(test_team))
+      end
+    end
+
+    describe('#add_member') do
+      it("adds a new member to a team") do
+        test_team = Team.new({:name => "Blackboard", :project => "Blackboard application for Accelerate HK"})
+        test_member = Member.new({:first_name => "Pace", :last_name => "Lee", :specialization => "developer"})
+        test_team.add_member(test_member)
+        expect(test_team.person()).to(eq([test_member]))
       end
     end
 

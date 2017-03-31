@@ -1,0 +1,9 @@
+<h1>Members</h1>
+
+  <h3>The selected team contains the following members: </h3>
+
+  <ol>
+  <% @members.each() do |member| %>
+    <li><a href="/members/<%= member.id() %>"><%= member.first_name() %></a></li>
+  <% end %>
+  </ol>

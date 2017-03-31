@@ -2,13 +2,14 @@ require ('pry')
 
 class Team
   @@teams = []
-  attr_reader(:name, :project, :id)
+  attr_reader(:name, :project, :id, :persons)
 
 
   define_method(:initialize) do |description|
     @name = description.fetch(:name)
     @project = description.fetch(:project)
     @id = @@teams.length().+(1)
+    @persons = []
   end
 
   define_singleton_method(:all) do
@@ -33,5 +34,8 @@ class Team
     found_team
   end
 
+  define_method(:add_member) do |member|
+    @persons.push(member)
+  end
 
 end
