@@ -42,4 +42,14 @@ describe(Team) do
       end
     end
 
+    describe(".find") do
+      it("returns a team by its id number") do
+        test_team = Team.new({:name => "Cool Cool", :project => "shop application"})
+        test_team.save()
+        test_team2 = Team.new({:name => "Blackboard", :project => "Blackboard application for Accelerate HK"})
+        test_team2.save()
+        expect(Team.find(test_team.id())).to(eq(test_team))
+      end
+    end
+
 end
